@@ -1,14 +1,22 @@
+#在mycat中设置好逻辑数据库及表（zxing，salesman)
+#在实际数据库中创建好salesman表
+#按实际修改mycat连接信息
+#开始测试test
 spring:
   application:
     name: mycat-jpa
   datasource:
     platform: mysql
-    type: com.zaxxer.hikari.HikariDataSource
+#    type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:8066/mall?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&useSSL=false
-    username: root
-    password: jiabin
+    url: jdbc:mysql://localhost:8066/zxing?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&useSSL=false
+    username: zxing
+    password: z101496x
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     show-sql: true
+
+server:
+  port: 80
+

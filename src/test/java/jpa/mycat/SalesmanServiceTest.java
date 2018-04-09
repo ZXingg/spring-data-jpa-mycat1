@@ -7,30 +7,25 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * Created by ssab on 17-1-5.
+ * Created by zxing on 17-1-5.
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class SalesmanServiceTest {
-  @Autowired
-  private SalesmanService service;
+    @Autowired
+    private SalesmanService service;
 
-  @Test
-  public void testFindAll() {
-    service.findAll().forEach(salesman -> System.out.println(salesman.toString()));
-  }
+    @Test
+    public void testFindAll() {
+        service.findAll().forEach(salesman -> System.out.println(salesman.toString()));
+    }
 
-  @Test
-  public void testSave(){
-    Salesman salesman = new Salesman();
+    @Test
+    public void testSave() {
 
-    salesman.setUserNum("3333333");
-    salesman.setTrueName("ssab");
+        for (int i = 11; i < 20; i++) {
+            service.save(new Salesman("zx" + i));
+        }
 
-    salesman.setAddress("山东省莱芜市");
-    salesman.setMobile("152222222");
-    salesman.setDisabled(0);
-
-    service.save(salesman);
-  }
+    }
 }
